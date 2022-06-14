@@ -140,7 +140,27 @@ function ModalBody({ children, noPadding = false, className = '' }: types.ModalB
   return <div className={classNames(style.modalBody, className, { [style.noPadding]: noPadding })}>{children}</div>
 }
 
+function ModalFooter({ children, center = false }: types.ModalFooterProps) {
+  return <div className={classNames(style.modalFooter, { [style.center]: center })}>{children}</div>
+}
+
+function ModalTitle({ children, icon = '?' }: types.ModalTitleProps) {
+  return (
+    <div className={style.title}>
+      {children}
+      <span className={style.icon}>{icon}</span>
+    </div>
+  )
+}
+
+function ModalMessage({ children, varient = 'primary' }: types.ModalMessageProps) {
+  return <div className={classNames(style.message, style[varient])}> {children}</div>
+}
+
 export default Object.assign(Modal, {
   useModal,
   Body: ModalBody,
+  Footer: ModalFooter,
+  Title: ModalTitle,
+  Message: ModalMessage,
 })

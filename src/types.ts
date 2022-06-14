@@ -39,3 +39,18 @@ export interface ModalBodyProps {
   className?: string
   children?: ReactElement[]
 }
+
+export interface ModalFooterProps {
+  children?: ReactElement[]
+  center?: boolean
+}
+
+export interface ModalTitleProps {
+  children?: ReactElement[]
+  icon?: string
+}
+
+export interface ModalMessageProps {
+  children?: ReactElement[]
+  varient?: 'primary' | 'secondary' | 'danger' | 'success' | 'info' | 'warning' | 'light'
+}
