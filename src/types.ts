@@ -33,3 +33,9 @@ export interface useModalProps {
   width?: null | string | number
   height?: null | string | number
 }
+
+export interface ModalBodyProps {
+  noPadding?: boolean
+  className?: string
+  children?: ReactElement[]
+}

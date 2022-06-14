@@ -3,15 +3,17 @@ import style from './modal.module.css'
 import { Portal } from 'react-portal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
-import { ModalProps, useModalProps, UseModalHook, ModalPosition } from './types'
+import * as types from './types'
 import { getWindowDimensions } from './helpers/window'
-export const useModal = (props?: useModalProps): UseModalHook => {
+import classNames from 'classnames'
+
+export const useModal = (props?: types.useModalProps): types.UseModalHook => {
   const { show: isvisible = false, width = null, height = null } = props || {}
   const modalRef = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState<boolean>(Boolean(isvisible))
-  const [position, setPosition] = useState<ModalPosition>({ top: 0, left: 0 })
-  const [oldPosition, setOldPosition] = useState<ModalPosition>({ top: 0, left: 0 })
-  const [startPosition, setStartPosition] = useState<ModalPosition>({ top: 0, left: 0 })
+  const [position, setPosition] = useState<types.ModalPosition>({ top: 0, left: 0 })
+  const [oldPosition, setOldPosition] = useState<types.ModalPosition>({ top: 0, left: 0 })
+  const [startPosition, setStartPosition] = useState<types.ModalPosition>({ top: 0, left: 0 })
 
   function handleResize() {
     const { width, height } = getWindowDimensions()
@@ -109,7 +111,7 @@ export const useModal = (props?: useModalProps): UseModalHook => {
   }
 }
 
-function Modal({ modal, title = '', children }: ModalProps) {
+function Modal({ modal, title = '', children }: types.ModalProps) {
   const { modalRef, dragEvent, visible, position, hide, width, height } = modal
 
   return visible ? (
@@ -134,6 +136,11 @@ function Modal({ modal, title = '', children }: ModalProps) {
   ) : null
 }
 
+function ModalBody({ children, noPadding = false, className = '' }: types.ModalBodyProps) {
+  return <div className={classNames(style.modalBody, className, { [style.noPadding]: noPadding })}>{children}</div>
+}
+
 export default Object.assign(Modal, {
   useModal,
+  Body: ModalBody,
 })
