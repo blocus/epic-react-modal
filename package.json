@@ -26,5 +26,19 @@
   "bugs": {
     "url": "https://github.com/blocus/epic-react-modal/issues"
   },
-  "homepage": "https://github.com/blocus/epic-react-modal#readme"
+  "homepage": "https://github.com/blocus/epic-react-modal#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "classnames": "^2.3.1",
+    "react": "^18.1.0",
+    "react-portal": "^4.2.2",
+    "typescript": "^4.7.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.12",
+    "@types/react-portal": "^4.0.4",
+    "node-sass": "^7.0.1"
+  }
 }
