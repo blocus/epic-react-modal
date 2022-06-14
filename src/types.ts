@@ -37,20 +37,20 @@ export interface useModalProps {
 export interface ModalBodyProps {
   noPadding?: boolean
   className?: string
-  children?: ReactElement[]
+  children?: ReactElement[] | string
 }
 
 export interface ModalFooterProps {
-  children?: ReactElement[]
+  children?: ReactElement[] | string
   center?: boolean
 }
 
 export interface ModalTitleProps {
-  children?: ReactElement[]
+  children?: ReactElement[] | string
   icon?: string
 }
 
 export interface ModalMessageProps {
-  children?: ReactElement[]
+  children?: ReactElement[] | string
   varient?: 'primary' | 'secondary' | 'danger' | 'success' | 'info' | 'warning' | 'light'
 }
