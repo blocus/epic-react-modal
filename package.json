@@ -1,0 +1,30 @@
+{
+  "name": "epic-react-modal",
+  "version": "1.0.0",
+  "description": "A simple and full customiable Modal component for reactjs",
+  "main": "src/index.tsx",
+  "keywords": [
+    "react",
+    "component",
+    "ecosystem-react",
+    "react-component",
+    "modal",
+    "typescript"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blocus/epic-react-modal.git"
+  },
+  "author": {
+    "name": "Ahmed Meftah",
+    "email": "contact@ahmedmeftah.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blocus/epic-react-modal/issues"
+  },
+  "homepage": "https://github.com/blocus/epic-react-modal#readme"
+}
