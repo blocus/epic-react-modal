@@ -1,0 +1,125 @@
+$primary-color: hsl(212, 48%, 13%);
+$secondary-color: hsl(183, 86%, 29%);
+$danger-color: hsl(0, 84%, 64%);
+$success-color: hsl(116, 62%, 50%);
+$info-color: hsl(191, 62%, 50%);
+$warning-color: hsl(36, 62%, 50%);
+$light-color: hsl(240, 2%, 73%);
+$default-radius: 10px;
+$grid-gap: 20px;
+
+
+.modalDrop {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  z-index: 1004;
+  background: rgba(0, 0, 0, 0.2);
+  isolation: isolate;
+
+  .modal {
+    min-width: 300px;
+    max-width: calc(100vw - 250px);
+    background: $primary-color;
+    color: white;
+    border-radius: 2 * $default-radius;
+    position: absolute;
+    font-family: "Dosis";
+    max-height: calc(100vh - 40px);
+
+    .modalHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: move;
+      padding: 16px 32px 0px;
+
+      button {
+        padding: 0.5em;
+        background: transparent;
+        border: 0px;
+        cursor: pointer;
+        color: rgba(white, 0.8);
+        &:hover {
+          color: white;
+        }
+      }
+    }
+    .modalBody {
+      padding: 16px 32px;
+    }
+
+    .message {
+      padding: 16px 32px;
+      text-align: center;
+      font-weight: 700;
+
+      &.primary {
+        background: $primary-color;
+        color: white;
+      }
+
+      &.secondary {
+        background: $secondary-color;
+        color: white;
+      }
+      &.danger {
+        background: $danger-color;
+        color: white;
+      }
+      &.success {
+        background: $success-color;
+      }
+      &.info {
+        background: $info-color;
+      }
+      &.warning {
+        background: $warning-color;
+      }
+      &.light {
+        background: $light-color;
+        color: $primary-color;
+      }
+    }
+
+    .modalFooter {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0px 32px 32px;
+      gap: $grid-gap;
+
+      button {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      &.center {
+        justify-content: center;
+        gap: 2 * $grid-gap;
+      }
+    }
+
+    .title {
+      font-family: "Ropa Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 39px;
+      text-align: center;
+      margin: 20px 32px;
+      color: #ffffff;
+
+      .icon {
+        display: block;
+        font-family: "Dosis";
+        font-weight: 900;
+        font-size: 100px;
+        line-height: 100px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
